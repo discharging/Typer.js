@@ -80,7 +80,7 @@ class Typer {
 class Cursor {
     constructor(element) {
         this.element = element;
-        this.cursorDisplay = element.dataset.cursordisplay || element.dataset.cursorDisplay || "|";
+        this.cursorDisplay = element.dataset.cursordisplay || element.dataset.cursorDisplay || "_";
         element.innerHTML = this.cursorDisplay;
         this.on = true;
         element.style.transition = "all 0.1s";
@@ -89,7 +89,6 @@ class Cursor {
     updateBlinkState() {
         if (this.on) {
             this.element.style.opacity = "0";
-            this.element.style.color = "magenta"
             this.on = false;
         } else {
             this.element.style.opacity = "1";
